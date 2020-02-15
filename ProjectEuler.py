@@ -51,8 +51,23 @@ def sum_square_difference(n) :
     difference = sum**2 - sum_of_squares
     return difference
 
-print(sum_square_difference(100))
+############ EXERCICE 7 ############
+def find_prime_number(n):
+    a = 1
+    n_prime = 2
+    i = 3
+    def is_prime(k) :
+        for j in range(2, k) :
+            if k % j == 0 : return False
+        return True
+    while (a < n) :
+        if is_prime(i) :
+            a += 1
+            n_prime = i
+        i += 1
+    return n_prime
 
+print(find_prime_number(10001))
 
 
 
