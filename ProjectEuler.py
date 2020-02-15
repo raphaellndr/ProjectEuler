@@ -89,7 +89,18 @@ def pythagorean_triplet(n) :
                     return a, b, c
                     break
 
+############ EXERCICE 10 ############
+def summation_of_prime(n) :
+    sum_of_primes = 0
+    def is_prime(k) :
+        for j in range(2, k) :
+            if k % j == 0 : return False
+        return True
+    for i in range(2, n+1) :
+        if is_prime(i) : sum_of_primes += i
+    return sum_of_primes
 
+print(summation_of_prime(2000000))
 
 
 
