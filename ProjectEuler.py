@@ -180,21 +180,23 @@ def large_sum() :
 def longest_Collatz_sequence(n) :
     largest_length = 0
     longest_collatz_sequence = 0
-    for i in range(n) :
+    for i in range(1, n) :
+        number = i
         sequence = []
-        while n != 1 :
-            if n % 2 == 0 :
-                n = n / 2
-                sequence.append(n)
+        while i != 1 :
+            if i % 2 == 0 :
+                i = i / 2
+                sequence.append(i)
             else :
-                n = 3 * n + 1
-                sequence.append(n)
+                i = 3 * i + 1
+                sequence.append(i)
         if len(sequence) > largest_length :
             largest_length = len(sequence)
-            longest_collatz_sequence = i
+            longest_collatz_sequence = number
+            #print(largest_length, longest_collatz_sequence)
     return longest_collatz_sequence
 
-print(longest_Collatz_sequence(1000000))
+
 
 
 
