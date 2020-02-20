@@ -176,7 +176,27 @@ def large_sum() :
         if len(res) % 10 == 0 : break
     return res
 
-print(large_sum())
+############ EXERCICE 14 ############
+def longest_Collatz_sequence(n) :
+    largest_length = 0
+    longest_collatz_sequence = 0
+    for i in range(n) :
+        sequence = []
+        while n != 1 :
+            if n % 2 == 0 :
+                n = n / 2
+                sequence.append(n)
+            else :
+                n = 3 * n + 1
+                sequence.append(n)
+        if len(sequence) > largest_length :
+            largest_length = len(sequence)
+            longest_collatz_sequence = i
+    return longest_collatz_sequence
+
+print(longest_Collatz_sequence(1000000))
+
+
 
 
 
