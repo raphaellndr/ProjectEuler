@@ -1,4 +1,4 @@
-import math
+import math, time
 
 ############ EXERCICE 1 ############
 def multiples_of_3_and_5() :
@@ -136,6 +136,39 @@ def largest_product() :
         if i % 20 > 3 and i < 340 :
             products.append(grid_list[i] * grid_list[i + 19] * grid_list[i + 38] * grid_list[i + 57])
     return max(products)
+
+############ EXERCICE 12 ############
+def highly_divisible_triangular_number(n) :
+    sum = 0
+    i = 1
+    factors = 0
+    while factors != n+1 and factors < n+1:
+        factors = 0
+        sum += i
+        i += 1
+        for j in range(1, sum+1) :
+            if sum % j == 0 : factors += 1
+        print(sum, factors)
+        if factors == n+1 :
+            return sum
+            break
+
+print(highly_divisible_triangular_number(200))
+
+# a=0; c=0; max=0;
+# while max<=500:
+# 	c+=1; a+=c; d=0; b=0; x=1
+# 	while a/x != b:
+# 		if a%x==0:
+# 			if x*x==a:
+# 				d+=1
+# 				break
+# 			b=x
+# 			d+=2
+# 		x+=1
+# 	if d>max:
+# 		max=d
+# 		print (d,a)
 
 
 
