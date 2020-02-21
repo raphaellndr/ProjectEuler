@@ -243,6 +243,21 @@ def number_letter_counts(n) :
     return count
 
 ############ EXERCICE 18 ############
+def maximum_path_sum_I(max_line) :
+    triangle = " 3 \
+                 7 4 \
+                 2 4 6 \
+                 8 5 9 3 "
+    triangle_list = [int(d) for d in triangle.split()]
+    before_last_line_first_index = 0
+    for i in range(1, max_line-1) :
+        before_last_line_first_index += i
+    for i in range(max_line) :
+        if triangle_list[before_last_line_first_index] + triangle_list[before_last_line_first_index + (max_line-1)] > triangle_list[before_last_line_first_index] + triangle_list[before_last_line_first_index + (max_line)] :
+            triangle_list[before_last_line_first_index] = triangle_list[before_last_line_first_index] + triangle_list[before_last_line_first_index + (max_line-1)]
+        else : triangle_list[before_last_line_first_index] = triangle_list[before_last_line_first_index] + triangle_list[before_last_line_first_index + (max_line)]
+
+
 
 
 
