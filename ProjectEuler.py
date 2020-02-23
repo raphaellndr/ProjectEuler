@@ -244,20 +244,47 @@ def number_letter_counts(n) :
 
 ############ EXERCICE 18 ############
 def maximum_path_sum_I(max_line) :
-    triangle = " 3 \
-                 7 4 \
-                 2 4 6 \
-                 8 5 9 3 "
+    triangle1 = " 3 \
+                  7 4 \
+                  2 4 6 \
+                  8 5 9 3 "
+    triangle = "75 \
+                95 64 \
+                17 47 82 \
+                18 35 87 10 \
+                20 04 82 47 65 \
+                19 01 23 75 03 34 \
+                88 02 77 73 07 63 67 \
+                99 65 04 28 06 16 70 92 \
+                41 41 26 56 83 40 80 70 33 \
+                41 48 72 33 47 32 37 16 94 29 \
+                53 71 44 65 25 43 91 52 97 51 14 \
+                70 11 33 28 77 73 17 78 39 68 17 57 \
+                91 71 52 38 17 14 91 43 58 50 27 29 48 \
+                63 66 04 68 89 53 67 30 73 16 69 87 40 31 \
+                04 62 98 27 23 09 70 98 73 93 38 53 60 04 23"
     triangle_list = [int(d) for d in triangle.split()]
     before_last_line_first_index = 0
+    # get the index of the first number of the penultimate line
     for i in range(1, max_line-1) :
         before_last_line_first_index += i
+    index = before_last_line_first_index
+    line_index = max_line
     for i in range(max_line) :
-        if triangle_list[before_last_line_first_index] + triangle_list[before_last_line_first_index + (max_line-1)] > triangle_list[before_last_line_first_index] + triangle_list[before_last_line_first_index + (max_line)] :
-            triangle_list[before_last_line_first_index] = triangle_list[before_last_line_first_index] + triangle_list[before_last_line_first_index + (max_line-1)]
-        else : triangle_list[before_last_line_first_index] = triangle_list[before_last_line_first_index] + triangle_list[before_last_line_first_index + (max_line)]
+        line_index -= 1
+        j = 1
+        while j < line_index :
+            j += 1
+            if triangle_list[index] + triangle_list[index + (line_index)] > triangle_list[index] + triangle_list[index + (line_index+1)] :
+                triangle_list[index] = triangle_list[index] + triangle_list[index + (line_index)]
+            else : triangle_list[index] = triangle_list[index] + triangle_list[index + (line_index+1)]
+            index += 1
+        index = before_last_line_first_index
+        index -= line_index - 1
+        before_last_line_first_index = index
+    return triangle_list[index] + triangle_list[0]
 
-
+print(maximum_path_sum_I(15))
 
 
 
