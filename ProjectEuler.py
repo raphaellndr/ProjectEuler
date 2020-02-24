@@ -277,6 +277,8 @@ def maximum_path_sum_I(max_line) :
         line_index -= 1
     return triangle_list[0]
 
+############ EXERCICE 19 ############
+#def counting_sundays() :
 
 
 
