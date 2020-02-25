@@ -15,6 +15,7 @@ def largest_palindrome():
     """
     Function that return the largest palindromic number that the product of
     2 3-digit numbers can make.
+    
     :return:
     """
     largest_palindrome = 0
