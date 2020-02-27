@@ -16,10 +16,10 @@ Find the product abc.
 
 def pythagorean_triplet(n):
     """
-    Function that return the Pythagorean triplet for which a+b+c=n.
+    Function that returns the Pythagorean triplet for which a+b+c=n.
 
     :param n: the value we want to be equal to.
-    :return:
+    :return: the triplet and the product of the 3 numbers.
     """
     for a in range(0, n):
         for b in range(a + 1, n):

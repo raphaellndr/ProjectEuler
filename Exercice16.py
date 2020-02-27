@@ -12,11 +12,11 @@ what is the sum of the digits of the number 2^1000?
 
 def power_digit_sum(number, power):
     """
-    Function that return the sum of the digit of 'number' to the power of 'power'.
+    Function that returns the sum of the digit of 'number' to the power of 'power'.
 
-    :param number: the number we want to raise to the power 'power'
-    :param power: the exponent
-    :return: the sum of the digit
+    :param number: the number we want to raise to the power 'power'.
+    :param power: the exponent.
+    :return: the sum of the digit.
     """
     number_at_power = number ** power
     number_list = [int(d) for d in str(number_at_power)]

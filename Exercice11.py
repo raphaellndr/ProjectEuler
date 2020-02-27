@@ -36,7 +36,7 @@ What is the greatest product of four adjacent numbers in the same direction
 
 def largest_product():
     """
-    Function that return the greatest product of four adjacent numbers in the same direction.
+    Function that returns the greatest product of four adjacent numbers in the same direction.
 
     :return: greatest product.
     """

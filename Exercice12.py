@@ -29,7 +29,7 @@ What is the value of the first triangle number to have over five hundred divisor
 
 def highly_divisible_triangular_number(n):
     """
-    Function that return the value of the first triangle number to have over n divisors.
+    Function that returns the value of the first triangle number to have over n divisors.
 
     :param n: the number of divisors we want to reach.
     :return: first triangular number that have over n divisors.

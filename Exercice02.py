@@ -16,11 +16,11 @@ find the sum of the even-valued terms.
 
 def even_fibonacci_numbers(limit):
     """
-    Function that return the sum of the even-valued terms in the Fibonacci sequence
+    Function that returns the sum of the even-valued terms in the Fibonacci sequence
     that are lower than the limit.
 
     :param limit: value that can't be exceeded by the Fibonacci sequence's terms.
-    :return:
+    :return: sum of even-valued terms.
     """
     sum_even_numbers = 0
     n_minus_2 = 1  # first term

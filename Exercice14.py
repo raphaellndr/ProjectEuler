@@ -20,10 +20,10 @@ Which starting number, under one million, produces the longest chain?
 
 def longest_Collatz_sequence(n):
     """
-    Function that return the longest sequence made by a starting number under n.
+    Function that returns the longest sequence made by a starting number under n.
 
     :param n: limit of the starting number.
-    :return: starting number and length of the sequence
+    :return: starting number and length of the sequence.
     """
     largest_length = 0
     longest_collatz_sequence = 0

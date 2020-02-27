@@ -13,10 +13,10 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 
 def largest_palindrome():
     """
-    Function that return the largest palindromic number that the product of
+    Function that returns the largest palindromic number that the product of
     2 3-digit numbers can make.
 
-    :return:
+    :return: largest palindromic number.
     """
     largest_palindrome = 0
     for j in range(100, 999):

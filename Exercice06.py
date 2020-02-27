@@ -18,11 +18,11 @@ natural numbers and the square of the sum.
 
 def sum_square_difference(limit):
     """
-    Function that return the difference between the sum of the squares and the
+    Function that returns the difference between the sum of the squares and the
     square of the sum, from one to 'limit'.
 
     :param limit: the natural number where we want to stop the sum.
-    :return:
+    :return: the difference.
     """
     sum = 0
     sum_of_squares = 0

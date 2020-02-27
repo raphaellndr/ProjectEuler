@@ -15,7 +15,7 @@ How many such routes are there through a 20×20 grid?
 
 def lattice_paths(grid_size, k):
     """
-    Function that return the number of routes in a 'grid_size' grid.
+    Function that returns the number of routes in a 'grid_size' grid.
 
     :param grid_size: size of the grid.
     :param k:

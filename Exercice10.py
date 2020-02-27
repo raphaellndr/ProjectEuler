@@ -14,10 +14,10 @@ Find the sum of all the primes below two million.
 
 def summation_of_prime(limit):
     """
-    Function that return the sum of all the primes below n.
+    Function that returns the sum of all the primes below n.
 
     :param limit: the greatest prime number we can reach (not necessarily one). .
-    :return:
+    :return: sum of the prime numbers.
     """
     sum_of_primes = 0
 

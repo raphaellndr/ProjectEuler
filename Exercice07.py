@@ -12,10 +12,10 @@ What is the 10 001st prime number?
 
 def find_prime_number(n):
     """
-    Function that return the nth prime number.
+    Function that returns the nth prime number.
 
     :param n: the nth prime number we are looking for.
-    :return:
+    :return: nth prime number.
     """
     a = 1
     n_prime = 2

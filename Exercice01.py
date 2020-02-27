@@ -13,11 +13,11 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 def multiples_of_3_and_5(number):
     """
-    Function that return the sum of all the multiples of 3 or 5 below the
+    Function that returns the sum of all the multiples of 3 or 5 below the
     parameter 'number'.
 
     :param number: the highest number that can be a multiple of 3 or 5.
-    :return:
+    :return: sum of all the multiples.
     """
     sum_of_multiples = 0
     for i in range(1, number):
