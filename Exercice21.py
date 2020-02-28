@@ -19,32 +19,19 @@ Evaluate the sum of all the amicable numbers under 10000.
 
 def amicable_number(n):
     """
+    Function that returns the sum of all the amicable numbers under n.
 
-    :param n:
-    :return:
+    :param n: greatest amicable number reachable.
+    :return: sum of the amicable numbers.
     """
 
-    def are_amicable(a, b):
-        sum_a = 0
-        sum_b = 0
-        for i in range(1, a):
-            if a % i == 0:
-                sum_a += i
-        for i in range(1, b):
-            if b % i == 0:
-                sum_b += i
-        if sum_a == b and sum_b == a:
-            return True
-        return False
+    def d(k):
+        return sum(x for x in range(1, k // 2 + 1) if not (k % x))
 
-    sum_amicable = 0
-    for a in range(n):
-        for b in range(n):
-            print(str(a) + ", " + str(b))
-            if a != b:
-                if are_amicable(a, b):
-                    sum_amicable += a + b
-    return sum_amicable
-
-
-print(amicable_number(10000))
+    amicable_number = set()
+    for i in range(1, n):
+        a = d(i)
+        b = d(a)
+        if (i == b) and (a != b):
+            amicable_number.add(a)
+    return sum(amicable_number)
