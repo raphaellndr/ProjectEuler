@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "projecteuler"
+version = "0.1.0"
+description = "Project Euler"
+authors = ["Raphaël Landuré <raph.landure@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+tqdm = "^4.64.0"
+numpy = "^1.23.1"
+memory-profiler = "^0.60.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
