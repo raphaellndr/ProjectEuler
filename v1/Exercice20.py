@@ -1,6 +1,3 @@
-############ EXERCICE 20 ############
-
-
 """
 n! means n × (n − 1) × ... × 3 × 2 × 1
 
@@ -9,6 +6,7 @@ and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27.
 
 Find the sum of the digits in the number 100!
 """
+
 
 def factorial_digit_sum(number):
     """
@@ -20,7 +18,7 @@ def factorial_digit_sum(number):
 
     def factorial(n):
         facto = 1
-        for j in range(1, n+1):
+        for j in range(1, n + 1):
             facto *= j
         return facto
 
@@ -30,5 +28,6 @@ def factorial_digit_sum(number):
     for i in range(len(factorial_digit)):
         sum += factorial_digit[i]
     return sum
+
 
 print(factorial_digit_sum(100))

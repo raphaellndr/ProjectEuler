@@ -1,6 +1,3 @@
-############ EXERCICE 14 ############
-
-
 """
 The following iterative sequence is defined for the set of positive integers:
 
@@ -41,5 +38,9 @@ def longest_Collatz_sequence(n):
             largest_length = len(sequence)
             longest_collatz_sequence = number
             # print(largest_length, longest_collatz_sequence)
-    return "the starting number is : " + str(longest_collatz_sequence) + "and his associated length is " \
-           + str(largest_length)
+    return (
+        "the starting number is : "
+        + str(longest_collatz_sequence)
+        + "and his associated length is "
+        + str(largest_length)
+    )

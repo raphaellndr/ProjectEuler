@@ -1,6 +1,3 @@
-############ EXERCICE 18 ############
-
-
 """
 By starting at the top of the triangle below and moving to adjacent numbers on the row below,
 the maximum total from top to bottom is 23.
@@ -62,12 +59,19 @@ def maximum_path_sum_I(max_line):
     line_index = max_line - 1
     for j in range(1, max_line):
         for i in range(line_index):
-            if triangle_list[index + i] + triangle_list[index + i + line_index] > triangle_list[index + i] + \
-                    triangle_list[index + i + (line_index + 1)]:
-                triangle_list[index + i] = triangle_list[index + i] + triangle_list[index + i + line_index]
+            if (
+                triangle_list[index + i] + triangle_list[index + i + line_index]
+                > triangle_list[index + i] + triangle_list[index + i + (line_index + 1)]
+            ):
+                triangle_list[index + i] = (
+                    triangle_list[index + i] + triangle_list[index + i + line_index]
+                )
             else:
-                triangle_list[index + i] = triangle_list[index + i] + triangle_list[index + i + (line_index + 1)]
+                triangle_list[index + i] = (
+                    triangle_list[index + i]
+                    + triangle_list[index + i + (line_index + 1)]
+                )
             # print(triangle_list[index+i])
-        index -= (line_index - 1)
+        index -= line_index - 1
         line_index -= 1
     return triangle_list[0]

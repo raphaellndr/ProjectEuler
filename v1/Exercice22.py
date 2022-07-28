@@ -1,10 +1,4 @@
-import string
-
-############ EXERCICE 22 ############
-
-
 """
-
 Using names.txt (right click and 'Save Link/Target As...'), a 46K text file
 containing over five-thousand first names, begin by sorting it into alphabetical
 order. Then working out the alphabetical value for each name, multiply this value
@@ -15,8 +9,9 @@ For example, when the list is sorted into alphabetical order, COLIN, which is wo
 score of 938 × 53 = 49714.
 
 What is the total of all the name scores in the file?
-
 """
+
+import string
 
 
 def names_score():
@@ -24,11 +19,12 @@ def names_score():
 
     :return: score of the file.
     """
-    file = sorted([n.strip('"') for n in open('names.txt').read().split(',')])
+    file = sorted([n.strip('"') for n in open("names.txt").read().split(",")])
 
     def score(index, name):
         return sum([string.uppercase.index(n) + 1 for n in name]) * index
 
     return sum([score(index + 1, name) for (index, name) in enumerate(file)])
+
 
 print(names_score())

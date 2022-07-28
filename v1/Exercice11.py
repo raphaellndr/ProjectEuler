@@ -1,8 +1,4 @@
-############ EXERCICE 11 ############
-
-
 """
-
 In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
 
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
@@ -30,7 +26,6 @@ The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
 
 What is the greatest product of four adjacent numbers in the same direction
 (up, down, left, right, or diagonally) in the 20×20 grid?
-
 """
 
 
@@ -64,11 +59,19 @@ def largest_product():
     products = []
     for i in range(400):
         if i % 20 < 17:
-            products.append(grid_list[i] * grid_list[i + 1] * grid_list[i + 2] * grid_list[i + 3])
+            products.append(
+                grid_list[i] * grid_list[i + 1] * grid_list[i + 2] * grid_list[i + 3]
+            )
         if i < 340:
-            products.append(grid_list[i] * grid_list[i + 20] * grid_list[i + 40] * grid_list[i + 60])
+            products.append(
+                grid_list[i] * grid_list[i + 20] * grid_list[i + 40] * grid_list[i + 60]
+            )
         if i % 20 < 17 and i < 340:
-            products.append(grid_list[i] * grid_list[i + 21] * grid_list[i + 42] * grid_list[i + 63])
+            products.append(
+                grid_list[i] * grid_list[i + 21] * grid_list[i + 42] * grid_list[i + 63]
+            )
         if i % 20 > 3 and i < 340:
-            products.append(grid_list[i] * grid_list[i + 19] * grid_list[i + 38] * grid_list[i + 57])
+            products.append(
+                grid_list[i] * grid_list[i + 19] * grid_list[i + 38] * grid_list[i + 57]
+            )
     return max(products)

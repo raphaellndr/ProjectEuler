@@ -1,8 +1,4 @@
-############ EXERCICE 8 ############
-
-
 """
-
 The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 
 73167176531330624919225119674426574742355349194934
@@ -28,7 +24,6 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 
 Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the
 value of this product?
-
 """
 
 
@@ -46,5 +41,6 @@ def largest_product(n):
         product = 1
         for j in range(i, i + n):
             product *= thousand_digits_list[j]
-            if product > greatest_product: greatest_product = product
+            if product > greatest_product:
+                greatest_product = product
     return greatest_product

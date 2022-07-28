@@ -1,10 +1,5 @@
-############ EXERCICE 13 ############
-
-
 """
-
 Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
-
 """
 
 
@@ -33,5 +28,6 @@ def large_sum():
     large_sum_list = [int(d) for d in str(large_sum)]
     for i in large_sum_list:
         res += str(i)
-        if len(res) % 10 == 0: break
+        if len(res) % 10 == 0:
+            break
     return res
