@@ -22,7 +22,7 @@ app.add_typer(subcommand, name="")
 @subcommand.command(help="")
 def exercise_2(
     limit: int = typer.Option(
-        0, help="Highest number that can be a multiple of 3 or 5."
+        2, help="Highest number that can be a multiple of 3 or 5."
     ),
 ) -> None:
     """
@@ -37,7 +37,6 @@ def exercise_2(
         next_fibo: int = sum(fibo[-2:])
         if next_fibo >= limit:
             print(sum([i for i in fibo if i % 2 == 0]))
-            return None
         fibo.append(next_fibo)
 
 
