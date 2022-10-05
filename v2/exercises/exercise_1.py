@@ -6,11 +6,11 @@ we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 """
-
 import typer
 
+from ..cli import app
+
 subcommand = typer.Typer(help="")
-app = typer.Typer(no_args_is_help=True)
 app.add_typer(subcommand, name="")
 
 

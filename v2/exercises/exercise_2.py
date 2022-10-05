@@ -9,13 +9,12 @@ By starting with 1 and 2, the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 find the sum of the even-valued terms.
 """
-
 import typer
-
 from typing import List
 
+from ..cli import app
+
 subcommand = typer.Typer(help="")
-app = typer.Typer(no_args_is_help=True)
 app.add_typer(subcommand, name="")
 
 

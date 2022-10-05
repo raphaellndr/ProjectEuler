@@ -27,14 +27,14 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the
 value of this product?
 """
+import typer
 import operator
 from functools import reduce
 from typing import List
 
-import typer
+from ..cli import app
 
 subcommand = typer.Typer(help="")
-app = typer.Typer(no_args_is_help=True)
 app.add_typer(subcommand, name="")
 
 

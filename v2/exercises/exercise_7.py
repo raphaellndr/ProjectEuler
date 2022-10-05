@@ -9,8 +9,9 @@ import typer
 from math import ceil, log
 from typing import List
 
+from ..cli import app
+
 subcommand = typer.Typer(help="")
-app = typer.Typer(no_args_is_help=True)
 app.add_typer(subcommand, name="")
 
 

@@ -9,8 +9,9 @@ numbers from 1 to 20 ?
 """
 import typer
 
+from ..cli import app
+
 subcommand = typer.Typer(help="")
-app = typer.Typer(no_args_is_help=True)
 app.add_typer(subcommand, name="")
 
 

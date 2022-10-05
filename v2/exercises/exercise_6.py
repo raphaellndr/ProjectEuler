@@ -11,13 +11,13 @@ numbers and the square of the sum is 3025−385=2640.
 Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 """
+import typer
 import operator
 from functools import reduce
 
-import typer
+from ..cli import app
 
 subcommand = typer.Typer(help="")
-app = typer.Typer(no_args_is_help=True)
 app.add_typer(subcommand, name="")
 
 

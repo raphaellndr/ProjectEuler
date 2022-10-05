@@ -6,14 +6,14 @@ from the product of two 2-digit numbers is 9009 = 91 × 99.
 
 Find the largest palindrome made from the product of two 3-digit numbers.
 """
-from typing import List
-
 import typer
 import itertools
 import functools
+from typing import List
+
+from ..cli import app
 
 subcommand = typer.Typer(help="")
-app = typer.Typer(no_args_is_help=True)
 app.add_typer(subcommand, name="")
 
 

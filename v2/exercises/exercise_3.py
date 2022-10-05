@@ -10,8 +10,9 @@ import typer
 import math
 from tqdm import tqdm
 
+from ..cli import app
+
 subcommand = typer.Typer(help="")
-app = typer.Typer(no_args_is_help=True)
 app.add_typer(subcommand, name="")
 
 
