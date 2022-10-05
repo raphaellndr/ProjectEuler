@@ -9,13 +9,7 @@ numbers from 1 to 20 ?
 """
 import typer
 
-from ..cli import app
 
-subcommand = typer.Typer(help="")
-app.add_typer(subcommand, name="")
-
-
-@subcommand.command(help="")
 def exercise_5() -> None:
     """
     Function that returns the smallest positive number that is evenly divisible by all

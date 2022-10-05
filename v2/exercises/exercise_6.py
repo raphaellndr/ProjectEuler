@@ -11,17 +11,12 @@ numbers and the square of the sum is 3025−385=2640.
 Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 """
-import typer
 import operator
 from functools import reduce
 
-from ..cli import app
-
-subcommand = typer.Typer(help="")
-app.add_typer(subcommand, name="")
+import typer
 
 
-@subcommand.command(help="")
 def exercise_6(
     limit: int = typer.Option(0, help="Natural number where we want to stop the sum."),
 ) -> None:
@@ -32,9 +27,7 @@ def exercise_6(
     :param limit: the natural number where we want to stop the sum.
     :return: the difference.
     """
-    sum_of_the_squares = reduce(
-        operator.add, [x * x for x in list(range(1, limit + 1))]
-    )
+    sum_of_the_squares = reduce(operator.add, [x * x for x in list(range(1, limit + 1))])
 
     square_of_the_sum = sum(list(range(1, limit + 1))) ** 2
 

@@ -5,14 +5,10 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 
 What is the 10 001st prime number?
 """
-import typer
 from math import ceil, log
 from typing import List
 
-from ..cli import app
-
-subcommand = typer.Typer(help="")
-app.add_typer(subcommand, name="")
+import typer
 
 
 def _upper_bound(n: int) -> int:
@@ -41,11 +37,8 @@ def _sieve_of_eratosthenes(limit: int) -> List[int]:
     return primes
 
 
-@subcommand.command(help="")
 def exercise_7(
-    n_prime_number: int = typer.Option(
-        0, help="The nth prime number we are looking for."
-    ),
+    n_prime_number: int = typer.Option(0, help="The nth prime number we are looking for."),
 ) -> None:
     """
     Function that returns the nth prime number.

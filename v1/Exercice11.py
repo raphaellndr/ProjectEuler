@@ -59,9 +59,7 @@ def largest_product():
     products = []
     for i in range(400):
         if i % 20 < 17:
-            products.append(
-                grid_list[i] * grid_list[i + 1] * grid_list[i + 2] * grid_list[i + 3]
-            )
+            products.append(grid_list[i] * grid_list[i + 1] * grid_list[i + 2] * grid_list[i + 3])
         if i < 340:
             products.append(
                 grid_list[i] * grid_list[i + 20] * grid_list[i + 40] * grid_list[i + 60]

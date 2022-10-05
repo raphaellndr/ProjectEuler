@@ -9,20 +9,17 @@ By starting with 1 and 2, the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 find the sum of the even-valued terms.
 """
-import typer
+
 from typing import List
 
-from ..cli import app
+import typer
 
-subcommand = typer.Typer(help="")
-app.add_typer(subcommand, name="")
+from ._registry import exercise
 
 
-@subcommand.command(help="")
+@exercise(name="exercise-2")
 def exercise_2(
-    limit: int = typer.Option(
-        2, help="Highest number that can be a multiple of 3 or 5."
-    ),
+    limit: int = typer.Option(2, help="Highest number that can be a multiple of 3 or 5."),
 ) -> None:
     """
     Function that returns the sum of the even-valued terms in the Fibonacci sequence

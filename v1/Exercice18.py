@@ -68,8 +68,7 @@ def maximum_path_sum_I(max_line):
                 )
             else:
                 triangle_list[index + i] = (
-                    triangle_list[index + i]
-                    + triangle_list[index + i + (line_index + 1)]
+                    triangle_list[index + i] + triangle_list[index + i + (line_index + 1)]
                 )
             # print(triangle_list[index+i])
         index -= line_index - 1

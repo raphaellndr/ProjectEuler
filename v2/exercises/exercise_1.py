@@ -8,17 +8,12 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 """
 import typer
 
-from ..cli import app
-
-subcommand = typer.Typer(help="")
-app.add_typer(subcommand, name="")
+from ._registry import exercise
 
 
-@subcommand.command(help="")
+@exercise(name="exercise-1")
 def exercise_1(
-    number: int = typer.Option(
-        0, help="Highest number that can be a multiple of 3 or 5."
-    ),
+    number: int = typer.Option(0, help="Highest number that can be a multiple of 3 or 5."),
 ) -> None:
     """
     Function that returns the sum of all the multiples of 3 or 5 below the

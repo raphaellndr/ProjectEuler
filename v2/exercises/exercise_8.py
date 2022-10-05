@@ -27,18 +27,13 @@ The four adjacent digits in the 1000-digit number that have the greatest product
 Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the
 value of this product?
 """
-import typer
 import operator
 from functools import reduce
 from typing import List
 
-from ..cli import app
-
-subcommand = typer.Typer(help="")
-app.add_typer(subcommand, name="")
+import typer
 
 
-@subcommand.command(help="")
 def exercise_8(
     n: int = typer.Option(0, help="Number of adjacent digits"),
 ) -> None:
@@ -52,7 +47,7 @@ def exercise_8(
     thousand_digits_list: List[int] = [int(d) for d in str(thousand_digits)]
 
     sliced_list: List[List[int]] = [
-        thousand_digits_list[i: i + n] for i in range(0, len(thousand_digits_list) - n)
+        thousand_digits_list[i : i + n] for i in range(0, len(thousand_digits_list) - n)
     ]
 
     products: List[int] = [reduce(operator.mul, l_slice) for l_slice in sliced_list]

@@ -6,14 +6,12 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143 ?
 """
 
-import typer
 import math
+
+import typer
 from tqdm import tqdm
 
-from ..cli import app
-
-subcommand = typer.Typer(help="")
-app.add_typer(subcommand, name="")
+from ._registry import exercise
 
 
 def _is_prime(k: int):
@@ -28,7 +26,7 @@ def _is_prime(k: int):
     return True
 
 
-@subcommand.command(help="")
+@exercise(name="exercise-3")
 def exercise_3(
     number: int = typer.Option(0, help=""),
 ) -> None:
