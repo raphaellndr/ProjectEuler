@@ -5,10 +5,9 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 
 What is the 10 001st prime number?
 """
-from typing import List
-
 import typer
 from math import ceil, log
+from typing import List
 
 subcommand = typer.Typer(help="")
 app = typer.Typer(no_args_is_help=True)
