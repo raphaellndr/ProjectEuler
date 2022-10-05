@@ -42,7 +42,9 @@ def _sieve_of_eratosthenes(limit: int) -> List[int]:
 
 @subcommand.command(help="")
 def exercise_7(
-    n_prime_number: int = typer.Option(0, help="The nth prime number we are looking for."),
+    n_prime_number: int = typer.Option(
+        0, help="The nth prime number we are looking for."
+    ),
 ) -> None:
     """
     Function that returns the nth prime number.

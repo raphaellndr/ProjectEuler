@@ -32,7 +32,9 @@ def exercise_6(
     :param limit: the natural number where we want to stop the sum.
     :return: the difference.
     """
-    sum_of_the_squares = reduce(operator.add, [x * x for x in list(range(1, limit + 1))])
+    sum_of_the_squares = reduce(
+        operator.add, [x * x for x in list(range(1, limit + 1))]
+    )
 
     square_of_the_sum = sum(list(range(1, limit + 1))) ** 2
 
