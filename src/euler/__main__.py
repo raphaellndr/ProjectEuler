@@ -1,7 +1,10 @@
+"""Main."""
+
 from . import cli
 
 
 def main():
+    """Main function."""
     cli.run()
 
 

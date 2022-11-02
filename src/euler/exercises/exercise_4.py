@@ -12,7 +12,10 @@ from typing import List
 
 import typer
 
+from ._registry import exercise
 
+
+@exercise(name="exercise-4")
 def exercise_4() -> None:
     """
     Function that returns the largest palindromic number that the product of
@@ -24,7 +27,7 @@ def exercise_4() -> None:
     palindromic_number: List = []
     for couple in itertools.product(three_digits_numbers, repeat=2):
         product: int = functools.reduce(lambda x, y: x * y, couple)
-        reversed_product: int = int("".join([d for d in str(product)][::-1]))
+        reversed_product: int = int("".join(list(str(product))[::-1]))
 
         if product == reversed_product:
             palindromic_number.append(product)

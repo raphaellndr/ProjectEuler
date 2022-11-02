@@ -1,7 +1,8 @@
 """
 Exercise 7:
 
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th
+prime is 13.
 
 What is the 10 001st prime number?
 """
@@ -10,16 +11,18 @@ from typing import List
 
 import typer
 
+from ._registry import exercise
 
-def _upper_bound(n: int) -> int:
+
+def _upper_bound(number: int) -> int:
     """
     Get the greatest n-th prime number possible.
 
-    :param n: n-th prime number possible.
+    :param number: n-th prime number possible.
     :return: greatest prime number possible.
     """
-    if n >= 6:
-        return ceil(n * (log(n) + log(log(n))))
+    if number >= 6:
+        return ceil(number * (log(number) + log(log(number))))
     return 100
 
 
@@ -37,6 +40,7 @@ def _sieve_of_eratosthenes(limit: int) -> List[int]:
     return primes
 
 
+@exercise(name="exercise-7")
 def exercise_7(
     n_prime_number: int = typer.Option(0, help="The nth prime number we are looking for."),
 ) -> None:

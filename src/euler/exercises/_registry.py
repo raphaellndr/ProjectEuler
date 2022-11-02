@@ -1,9 +1,18 @@
+"""Exercise decorator."""
+
 from typing import Callable, MutableMapping
 
 EXERCISES_REGISTRY: MutableMapping[str, Callable] = {}
 
 
 def exercise(func: Callable = None, *, name: str = None) -> Callable:
+    """
+
+    :param func:
+    :param name:
+    :return:
+    """
+
     def _decorator(target: Callable) -> Callable:
         nonlocal name
 

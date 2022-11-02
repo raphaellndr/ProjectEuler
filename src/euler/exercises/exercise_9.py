@@ -13,18 +13,21 @@ from typing import List
 
 import typer
 
+from ._registry import exercise
 
+
+@exercise(name="exercise-9")
 def exercise_8(
-    n: int = typer.Option(0, help="Number of adjacent digits"),
+    goal: int = typer.Option(0, help="Number of adjacent digits"),
 ) -> None:
     """
-    Function that returns the Pythagorean triplet for which a+b+c=n.
+    Function that returns the Pythagorean triplet for which a+b+c=goal.
 
-    :param n: the value we want to be equal to.
+    :param goal: the value we want to be equal to.
     :return: the triplet and the product of the 3 numbers.
     """
     numbers: List[int] = list(range(1, 998))
-    print(numbers)
+    print(numbers, goal)
 
 
 if __name__ == "__main__":
