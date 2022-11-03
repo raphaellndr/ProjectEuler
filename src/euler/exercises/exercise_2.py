@@ -17,23 +17,31 @@ import typer
 from ._registry import exercise
 
 
-@exercise(name="exercise-2")
-def exercise_2(
-    limit: int = typer.Option(2, help="Highest number that can be a multiple of 3 or 5."),
-) -> None:
-    """
-    Function that returns the sum of the even-valued terms in the Fibonacci sequence
+def fibo_sum(limit: int) -> int:
+    """Function that returns the sum of the even-valued terms in the Fibonacci sequence
     that are lower than the limit.
 
     :param limit: value that can't be exceeded by the Fibonacci sequence's terms.
-    :return: sum of even-valued terms.
     """
     fibo: List = [1, 2]
     while True:
         next_fibo: int = sum(fibo[-2:])
         if next_fibo >= limit:
-            print(sum(i for i in fibo if i % 2 == 0))
+            return sum(i for i in fibo if i % 2 == 0)
         fibo.append(next_fibo)
+
+
+@exercise(name="exercise-2")
+def exercise_2(
+    limit: int = typer.Option(2, help="Highest number that can be a multiple of 3 or 5."),
+) -> None:
+    """Exercise 2: sum of the even-valued terms in the Fibonacci sequence.
+
+    :param limit: value that can't be exceeded by the Fibonacci sequence's terms.
+    :return: None.
+    """
+    result: int = fibo_sum(limit)
+    print(result)
 
 
 if __name__ == "__main__":

@@ -11,22 +11,31 @@ import typer
 from ._registry import exercise
 
 
-@exercise(name="exercise-1")
-def exercise_1(
-    number: int = typer.Option(0, help="Highest number that can be a multiple of 3 or 5."),
-) -> None:
-    """
-    Function that returns the sum of all the multiples of 3 or 5 below the
+def sum_of_multiples(number: int) -> int:
+    """Function that returns the sum of all the multiples of 3 or 5 below the
     parameter 'number'.
 
     :param number: the highest number that can be a multiple of 3 or 5.
     :return: sum of all the multiples.
     """
-    sum_of_multiples: int = 0
+    mltp_sum: int = 0
     for i in range(1, number):
         if i % 3 == 0 or i % 5 == 0:
-            sum_of_multiples += i
-    print(sum_of_multiples)
+            mltp_sum += i
+    return mltp_sum
+
+
+@exercise(name="exercise-1")
+def exercise_1(
+    number: int = typer.Option(0, help="Highest number that can be a multiple of 3 or 5."),
+) -> None:
+    """Exercise 1: sum of all the multiples of 3 or 5 below the parameter 'number'.
+
+    :param number: the highest number that can be a multiple of 3 or 5.
+    :return: None.
+    """
+    result: int = sum_of_multiples(number)
+    print(result)
 
 
 if __name__ == "__main__":
