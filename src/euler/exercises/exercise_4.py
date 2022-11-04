@@ -21,6 +21,7 @@ def greatest_palindromic_product(numbers_length: int):
     numbers can make.
 
     :param numbers_length: length (numbers of digits) of the numbers.
+    :return: largest palindromic number.
     """
     numbers: list[int] = list(range(10 ** (numbers_length - 1), 10**numbers_length))
 
@@ -42,7 +43,6 @@ def exercise_4(
     """Exercise 4: largest palindromic number that the product of 2 3-digit numbers can make.
 
     :param numbers_length: length (numbers of digits) of the numbers.
-    :return: largest palindromic number.
     """
     result: int = greatest_palindromic_product(numbers_length)
     print(result)

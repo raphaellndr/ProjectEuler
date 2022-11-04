@@ -32,7 +32,6 @@ def exercise_1(
     """Exercise 1: sum of all the multiples of 3 or 5 below the parameter 'number'.
 
     :param number: the highest number that can be a multiple of 3 or 5.
-    :return: None.
     """
     result: int = sum_of_multiples(number)
     print(result)

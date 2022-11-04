@@ -30,6 +30,7 @@ def greatest_prime_factor(number: int) -> int:
 
     :param number: the number that will be divided in order to find its greatest
     prime divisor.
+    :return: largest prime divisor.
     """
     greatest_pf: int = 0
     for factor in tqdm(range(1, int(math.ceil(math.sqrt(number))) + 2)):
@@ -47,7 +48,6 @@ def exercise_3(
 
     :param number: the number that will be divided in order to find its greatest
     prime divisor.
-    :return: largest prime divisor.
     """
     result: int = greatest_prime_factor(number)
     print(result)

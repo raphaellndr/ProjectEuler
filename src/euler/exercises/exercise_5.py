@@ -31,8 +31,6 @@ def smallest_number() -> int:
 def exercise_5() -> None:
     """Exercise 5: smallest positive number that is evenly divisible by all
     numbers from 1 to 20.
-
-    :return: None.
     """
     result: int = smallest_number()
     print(result)

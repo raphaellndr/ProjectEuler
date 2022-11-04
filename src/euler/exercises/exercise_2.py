@@ -21,6 +21,7 @@ def fibo_sum(limit: int) -> int:
     that are lower than the limit.
 
     :param limit: value that can't be exceeded by the Fibonacci sequence's terms.
+    :return: sum of the even-valued terms in the Fibonacci sequence.
     """
     fibo: List = [1, 2]
     while True:
@@ -37,7 +38,6 @@ def exercise_2(
     """Exercise 2: sum of the even-valued terms in the Fibonacci sequence.
 
     :param limit: value that can't be exceeded by the Fibonacci sequence's terms.
-    :return: None.
     """
     result: int = fibo_sum(limit)
     print(result)
