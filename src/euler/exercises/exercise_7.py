@@ -1,11 +1,11 @@
-"""
-Exercise 7:
+"""Exercise 7:
 
 By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th
 prime is 13.
 
 What is the 10 001st prime number?
 """
+
 from math import ceil, log
 from typing import List
 
@@ -14,19 +14,24 @@ import typer
 from ._registry import exercise
 
 
-def _upper_bound(number: int) -> int:
+def upper_bound(number: int) -> int:
     """
-    Get the greatest n-th prime number possible.
+    Get the greatest n-th prime number possible (approximately).
 
     :param number: n-th prime number possible.
     :return: greatest prime number possible.
     """
     if number >= 6:
-        return ceil(number * (log(number) + log(log(number))))
-    return 100
+        return ceil(number * log((number * log(number))))
+    return number
 
 
-def _sieve_of_eratosthenes(limit: int) -> List[int]:
+def sieve_of_eratosthenes(limit: int) -> List[int]:
+    """Finds all prime numbers up to any given limit.
+
+    :param limit: greatest prime number possible.
+    :return: list of prime numbers.
+    """
     boolean_values = [True] * (limit + 1)
     boolean_values[0] = boolean_values[1] = False
 
@@ -50,9 +55,9 @@ def exercise_7(
     :param n_prime_number: the nth prime number we are looking for.
     :return: nth prime number.
     """
-    upper_bound: int = _upper_bound(n_prime_number)
-    primes: List[int] = _sieve_of_eratosthenes(upper_bound)
-    print(primes[-1])
+    upp_bound: int = upper_bound(n_prime_number)
+    primes: List[int] = sieve_of_eratosthenes(upp_bound)
+    print(primes[n_prime_number - 1])
 
 
 if __name__ == "__main__":
