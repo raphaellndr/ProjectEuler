@@ -1,6 +1,8 @@
-"""Cli tests."""
-
-
+# """Cli tests."""
+#
+# from subprocess import PIPE, run
+#
+#
 # def test_help():
 #     res = run(["python -m euler", "--help"], stdout=PIPE, stderr=PIPE, shell=True)
 #     assert res.returncode == 0
