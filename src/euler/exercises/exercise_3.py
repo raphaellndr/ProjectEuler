@@ -28,8 +28,7 @@ def is_prime(k: int):
 def greatest_prime_factor(number: int) -> int:
     """Function that returns the largest prime factor of a number.
 
-    :param number: the number that will be divided in order to find its greatest
-    prime divisor.
+    :param number: the number that will be divided in order to find its greatest prime divisor.
     :return: largest prime divisor.
     """
     greatest_pf: int = 0

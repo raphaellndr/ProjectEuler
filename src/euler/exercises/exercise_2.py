@@ -5,8 +5,8 @@ By starting with 1 and 2, the first 10 terms will be:
 
 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 
-By considering the terms in the Fibonacci sequence whose values do not exceed four million,
-find the sum of the even-valued terms.
+By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the
+sum of the even-valued terms.
 """
 
 from typing import List
@@ -17,8 +17,8 @@ from ._registry import exercise
 
 
 def fibo_sum(limit: int) -> int:
-    """Function that returns the sum of the even-valued terms in the Fibonacci sequence
-    that are lower than the limit.
+    """Function that returns the sum of the even-valued terms in the Fibonacci sequence that are
+    lower than the limit.
 
     :param limit: value that can't be exceeded by the Fibonacci sequence's terms.
     :return: sum of the even-valued terms in the Fibonacci sequence.
