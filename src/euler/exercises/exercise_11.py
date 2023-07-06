@@ -38,6 +38,9 @@ def get_largest_product(data: np.ndarray, nb_adjacent_digits: int) -> int:
     :param nb_adjacent_digits: number of adjacent numbers to compute products from.
     :returns: largest products amongst every direction.
     """
+    transposed_data = data.transpose()
+    horizontally_flipped_data = np.flip(data, 0)
+
     product = 0
     for i in range(len(data) - nb_adjacent_digits + 1):
         for j in range(len(data) - nb_adjacent_digits + 1):
@@ -47,20 +50,34 @@ def get_largest_product(data: np.ndarray, nb_adjacent_digits: int) -> int:
             )
             # compute vertical product
             vertical_product: int = functools.reduce(
-                lambda x, y: x * y, data.transpose()[i][j : j + nb_adjacent_digits]
+                lambda x, y: x * y, transposed_data[i][j : j + nb_adjacent_digits]
             )
-            # compute diagonal product
-            diagonal_digits: list[int] = [data[i + k][j + k] for k in range(nb_adjacent_digits)]
-            diagonal_product = functools.reduce(lambda x, y: x * y, diagonal_digits)
+            # compute diagonal products
+            downwards_diagonal_digits: list[int] = [
+                data[i + k][j + k] for k in range(nb_adjacent_digits)
+            ]
+            downwards_diagonal_product = functools.reduce(
+                lambda x, y: x * y, downwards_diagonal_digits
+            )
+            upwards_diagonal_digits: list[int] = [
+                horizontally_flipped_data[i + k][j + k] for k in range(nb_adjacent_digits)
+            ]
+            upwards_diagonal_product = functools.reduce(lambda x, y: x * y, upwards_diagonal_digits)
 
-            product = max(product, horizontal_product, vertical_product, diagonal_product)
+            product = max(
+                product,
+                horizontal_product,
+                vertical_product,
+                downwards_diagonal_product,
+                upwards_diagonal_product,
+            )
 
     return product
 
 
 @exercise(name="exercise-11")
 def exercise_11(
-    nb_adjacent_digits: int = typer.Option(4, help=""),
+    nb_adjacent_digits: int = typer.Option(1, help=""),
 ) -> None:
     """Exercise 11: Greatest product of four adjacent numbers in the same direction in the grid.
 
