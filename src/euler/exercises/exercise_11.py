@@ -81,7 +81,7 @@ def exercise_11(
 ) -> None:
     """Exercise 11: Greatest product of four adjacent numbers in the same direction in the grid.
 
-    :param nb_adjacent_digits: .
+    :param nb_adjacent_digits: number of adjacent numbers.
     """
     data = process_data()
     diagonal_product = get_largest_product(data, nb_adjacent_digits)
