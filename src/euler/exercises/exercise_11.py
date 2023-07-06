@@ -77,7 +77,7 @@ def get_largest_product(data: np.ndarray, nb_adjacent_digits: int) -> int:
 
 @exercise(name="exercise-11")
 def exercise_11(
-    nb_adjacent_digits: int = typer.Option(1, help=""),
+    nb_adjacent_digits: int = typer.Option(1, help="Number of adjacent numbers."),
 ) -> None:
     """Exercise 11: Greatest product of four adjacent numbers in the same direction in the grid.
 
