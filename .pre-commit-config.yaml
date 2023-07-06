@@ -5,29 +5,6 @@ repos:
 
    # Code formatting
 
-   - id: autoflake
-     name: autoflake
-     description: Removes unused imports and variables.
-     stages: [commit]
-     language: python
-     entry: autoflake
-     args: [
-       --in-place,
-       --recursive,
-       --remove-unused-variables,
-       --remove-all-unused-imports,
-       --remove-duplicate-keys
-     ]
-     types: [python]
-
-   - id: isort
-     name: isort
-     description: Sorts imports alphabetically and automatically separated into sections.
-     stages: [commit]
-     language: python
-     entry: isort
-     types: [python]
-
    - id: black
      name: black
      description: Python code formatting.
@@ -36,15 +13,14 @@ repos:
      entry: black
      types: [python]
 
-   # Code analysis
-
-   - id: flake8
-     name: flake8
-     description: Performs static analysis of source code written in Python.
+   - id: ruff
+     name: ruff
      stages: [commit]
      language: python
-     entry: flake8
+     entry: ruff --fix
      types: [python]
+
+   # Code analysis
 
    - id: mypy
      name: mypy

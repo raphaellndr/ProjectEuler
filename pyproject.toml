@@ -1,3 +1,7 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.poetry]
 name = "euler"
 version = "0.1.0"
@@ -10,34 +14,23 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "~3.9"
-tqdm = "4.64.1"
-numpy = "1.23.4"
-typer = "0.6.1"
+tqdm = "4.65.0"
+numpy = "1.25.0"
+typer = "0.9.0"
 
 [tool.poetry.dev-dependencies]
-black = "22.10.0"
-mypy = "0.982"
-pylint = "2.15.5"
-flake8 = "5.0.4"
-pre-commit = "2.20.0"
-isort = "5.10.1"
-autoflake = "1.7.7"
-pytest = "7.2.0"
+pre-commit = "3.3.3"
+pytest = "7.4.0"
+black = "23.3.0"
+mypy = "1.4.1"
+pylint = "2.17.4"
+ruff = "0.0.276"
 
 [tool.poetry.scripts]
 euler = "euler.__main__:main"
 
 [tool.black]
 line-length = 100
-
-[tool.isort]
-# Compatibility with black (source: https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html#isort)
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-use_parentheses = true
-ensure_newline_before_comments = true
-line_length = 100
 
 [tool.pylint.basic]
 good-names = [
@@ -81,12 +74,13 @@ exclude_lines = [
 ]
 fail_under = 20
 
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+select = ["E", "F"]
+
 [tool.mypy]
 files = ["src/euler"]
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
 
 
 [[tool.mypy.overrides]]

@@ -11,11 +11,14 @@ the value of this product?
 
 import operator
 from functools import reduce
+from pathlib import Path
 from typing import List
 
 import typer
 
 from ._registry import exercise
+
+THOUSAND_DIGITS = Path(__file__).parent.parent.parent.parent / "data/thousand_digits.txt"
 
 
 def greatest_product(n_digits: int):
@@ -24,7 +27,7 @@ def greatest_product(n_digits: int):
     :param n_digits: number of adjacent digits.
     :return: greatest product.
     """
-    with open("src/euler/data/thousand_digits.txt", "r", encoding="utf-8") as file:
+    with open(THOUSAND_DIGITS, "r", encoding="utf-8") as file:
         thousand_digits: str = file.read()
 
     thousand_digits_list: List[int] = [int(d) for d in thousand_digits]

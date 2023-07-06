@@ -35,7 +35,7 @@ def sieve_of_eratosthenes(limit: int) -> List[int]:
     boolean_values[0] = boolean_values[1] = False
 
     primes = []
-    for (i, boolean_value) in enumerate(boolean_values):
+    for i, boolean_value in enumerate(boolean_values):
         if boolean_value:
             primes.append(i)
             for j in range(i * i, limit + 1, i):
