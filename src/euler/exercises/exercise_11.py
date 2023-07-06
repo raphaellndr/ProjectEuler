@@ -7,7 +7,7 @@ What is the greatest product of four adjacent numbers in the same direction
 or diagonally) in the 20×20 grid?
 """
 
-import functools
+from functools import reduce
 from pathlib import Path
 
 import numpy as np
@@ -45,24 +45,22 @@ def get_largest_product(data: np.ndarray, nb_adjacent_digits: int) -> int:
     for i in range(len(data) - nb_adjacent_digits + 1):
         for j in range(len(data) - nb_adjacent_digits + 1):
             # compute horizontal product
-            horizontal_product: int = functools.reduce(
+            horizontal_product: int = reduce(
                 lambda x, y: x * y, data[i][j : j + nb_adjacent_digits]
             )
             # compute vertical product
-            vertical_product: int = functools.reduce(
+            vertical_product: int = reduce(
                 lambda x, y: x * y, transposed_data[i][j : j + nb_adjacent_digits]
             )
             # compute diagonal products
             downwards_diagonal_digits: list[int] = [
                 data[i + k][j + k] for k in range(nb_adjacent_digits)
             ]
-            downwards_diagonal_product = functools.reduce(
-                lambda x, y: x * y, downwards_diagonal_digits
-            )
+            downwards_diagonal_product = reduce(lambda x, y: x * y, downwards_diagonal_digits)
             upwards_diagonal_digits: list[int] = [
                 horizontally_flipped_data[i + k][j + k] for k in range(nb_adjacent_digits)
             ]
-            upwards_diagonal_product = functools.reduce(lambda x, y: x * y, upwards_diagonal_digits)
+            upwards_diagonal_product = reduce(lambda x, y: x * y, upwards_diagonal_digits)
 
             product = max(
                 product,
