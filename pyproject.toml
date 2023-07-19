@@ -13,18 +13,18 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "~3.9"
+python = "~3.11"
 tqdm = "4.65.0"
-numpy = "1.25.0"
+numpy = "1.25.1"
 typer = "0.9.0"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "3.3.3"
 pytest = "7.4.0"
-black = "23.3.0"
+black = "23.7.0"
 mypy = "1.4.1"
 pylint = "2.17.4"
-ruff = "0.0.276"
+ruff = "0.0.278"
 
 [tool.poetry.scripts]
 euler = "euler.__main__:main"
