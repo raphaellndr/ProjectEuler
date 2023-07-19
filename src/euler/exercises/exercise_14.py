@@ -46,10 +46,12 @@ def apply_collatz_rules(number: int) -> int:
 
 
 @exercise(name="exercise-14")
-def exercise_14() -> None:
+def exercise_14(
+    highest_number: int = typer.Option(1000000, help="Highest number to apply rules on.")
+) -> None:
     """Exercise 14: Find which number, under one million, produces the longest chain."""
     max_ = CollatzNumber(number=1, chain_length=1)
-    for number in range(2, 1000000):
+    for number in range(2, highest_number):
         chain_length = apply_collatz_rules(number)
         if max_.chain_length < chain_length:
             max_ = CollatzNumber(number=number, chain_length=chain_length)
