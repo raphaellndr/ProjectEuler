@@ -4,11 +4,11 @@ The sum of the squares of the first ten natural numbers is, 1²+2²+...+10²=385
 
 The square of the sum of the first ten natural numbers is, (1+2+...+10)²=55²=3025.
 
-Hence the difference between the sum of the squares of the first ten natural
-numbers and the square of the sum is 3025−385=2640.
+Hence the difference between the sum of the squares of the first ten natural numbers and the square
+of the sum is 3025−385=2640.
 
-Find the difference between the sum of the squares of the first one hundred
-natural numbers and the square of the sum.
+Find the difference between the sum of the squares of the first one hundred natural numbers and the
+square of the sum.
 """
 
 import operator
@@ -41,12 +41,10 @@ def square_of_sum(limit: int) -> int:
 def exercise_6(
     limit: int = typer.Option(1, help="Natural number where we want to stop the sum."),
 ) -> None:
-    """
-    Function that returns the difference between the sum of the squares and the
-    square of the sum, from one to 'limit'.
+    """Exercise 6: difference between the sum of the squares and the square of the sum, from one to
+    'limit'.
 
     :param limit: the natural number where we want to stop the sum.
-    :return: the difference.
     """
     print(square_of_sum(limit) - sum_of_squares(limit))
 

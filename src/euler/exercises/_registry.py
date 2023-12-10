@@ -1,11 +1,11 @@
 """Exercise decorator."""
 
-from typing import Callable, MutableMapping
+from typing import Callable, MutableMapping, Optional
 
 EXERCISES_REGISTRY: MutableMapping[str, Callable] = {}
 
 
-def exercise(func: Callable = None, *, name: str = None) -> Callable:
+def exercise(func: Optional[Callable] = None, *, name: Optional[str] = None) -> Callable:
     """
 
     :param func:
